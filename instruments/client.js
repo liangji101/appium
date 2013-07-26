@@ -4,7 +4,7 @@ var net = require('net')
   , ap = require('argparse').ArgumentParser;
 
 var connect = function(args) {
-  var client = net.connect({path: args.socket}, function() {
+  var client = net.connect(args.socket, function() {
     var data = {event: "cmd"};
     if (args.result) {
       data.result = JSON.parse(args.result);
